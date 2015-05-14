@@ -21,6 +21,7 @@ The rest of functions are provided for your convenience, if you want to access t
 import json
 import codecs
 import requests
+import pprint
 
 URL_MAIN = "http://api.nytimes.com/svc/"
 URL_POPULAR = URL_MAIN + "mostpopular/v2/"
@@ -38,10 +39,17 @@ def article_overview(kind, period):
     data = get_from_file(kind, period)
     titles = []
     urls =[]
-    # YOUR CODE HERE
+    for each in data:
+        titles.append(
+            { each['section'] : each['title'] }
+        )
+        
+        for media in each['media']:
+            for metadata in media['media-metadata']:
+                if metadata['format'] == 'Standard Thumbnail':
+                    urls.append(metadata['url'])
 
     return (titles, urls)
-
 
 def query_site(url, target, offset):
     # This will set up the query with the API key and offset
