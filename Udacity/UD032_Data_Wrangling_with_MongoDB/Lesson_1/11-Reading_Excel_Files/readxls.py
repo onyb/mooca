@@ -39,7 +39,7 @@ def parse_file(datafile):
             'mintime': xlrd.xldate_as_tuple(mintime, 0),
             'minvalue': minvalue,
             'avgcoast': avgcoast
-    }    
+    }
     return data
 
 def test():
