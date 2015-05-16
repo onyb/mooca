@@ -20,3 +20,6 @@ def get_root(fname):
 
 
 get_root(PATENTS)
+
+# The line in XML data causing the error is: <?xml version="1.0" encoding="UTF-8"?>
+# Cause of error: Multiple XML documents merged together in a single file
