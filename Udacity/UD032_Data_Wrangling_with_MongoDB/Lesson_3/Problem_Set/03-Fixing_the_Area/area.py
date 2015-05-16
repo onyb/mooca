@@ -19,13 +19,25 @@ import pprint
 
 CITIES = 'cities.csv'
 
+def is_float(v):
+    try:
+        float(v)
+    except:
+        return False
+    return True
+
 
 def fix_area(area):
-
-    # YOUR CODE HERE
-
-    return area
-
+    if is_float(area):
+        return float(area)
+    elif area[0] == "{":
+        areas = area.translate(None, "{}").split('|')
+        if areas[0].find("e") > areas[1].find("e"):
+            return float(areas[0])
+        else:
+            return float(areas[1])
+    else:
+        return None
 
 
 def process_file(filename):
@@ -35,7 +47,7 @@ def process_file(filename):
     with open(filename, "r") as f:
         reader = csv.DictReader(f)
 
-        #skipping the extra matadata
+        #skipping the extra metadata
         for i in range(3):
             l = reader.next()
 
