@@ -24,13 +24,29 @@ OUTPUT_GOOD = 'autos-valid.csv'
 OUTPUT_BAD = 'FIXME-autos.csv'
 
 def process_file(input_file, output_good, output_bad):
-
+    good = []
+    bad = []
     with open(input_file, "r") as f:
         reader = csv.DictReader(f)
         header = reader.fieldnames
 
-        #COMPLETE THIS FUNCTION
+        for row in reader:
+            if "http://dbpedia.org" in row["URI"]:
+                year = row["productionStartYear"]
 
+                try:
+                    year = int(year[:4])
+                except:
+                    bad.append(row)
+                    continue
+                if year > 2014 or year < 1886:
+                    bad.append(row)
+                    continue
+                row["productionStartYear"] = year
+                good.append(row)
+
+            else:
+                pass
 
 
     # This is just an example on how you can use csv.DictWriter
@@ -38,7 +54,13 @@ def process_file(input_file, output_good, output_bad):
     with open(output_good, "w") as g:
         writer = csv.DictWriter(g, delimiter=",", fieldnames= header)
         writer.writeheader()
-        for row in YOURDATA:
+        for row in good:
+            writer.writerow(row)
+
+    with open(output_bad, "w") as g:
+        writer = csv.DictWriter(g, delimiter=",", fieldnames= header)
+        writer.writeheader()
+        for row in bad:
             writer.writerow(row)
 
 
