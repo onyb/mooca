@@ -8,7 +8,7 @@ It would make it easier to process and query the data later, if all values for t
 would be in a Python list, instead of being just a string separated with special characters, like now.
 
 Finish the function fix_name(). It will recieve a string as an input, and it has to return a list
-of all the names. If there is only one name, the list with have only one item in it, if the name is "NONE",
+of all the names. If there is only one name, the list with have only one item in it, if the name is "NULL",
 the list should be empty.
 The rest of the code is just an example on how this function can be used
 """
@@ -20,17 +20,22 @@ CITIES = 'cities.csv'
 
 
 def fix_name(name):
+    name_list = []
+    if name[0] == "{":
+        name_list = name.translate(None, "{}").split("|")
+    elif name == "NULL":
+        pass
+    else:
+        name_list.append(name)
 
-    # YOUR CODE HERE
-
-    return name
+    return name_list
 
 
 def process_file(filename):
     data = []
     with open(filename, "r") as f:
         reader = csv.DictReader(f)
-        #skipping the extra matadata
+        #skipping the extra metadata
         for i in range(3):
             l = reader.next()
         # processing file
@@ -50,6 +55,7 @@ def test():
         pprint.pprint(data[n]["name"])
 
     assert data[14]["name"] == ['Negtemiut', 'Nightmute']
+    assert data[9]["name"] == ['Pell City Alabama']
     assert data[3]["name"] == ['Kumhari']
 
 if __name__ == "__main__":
