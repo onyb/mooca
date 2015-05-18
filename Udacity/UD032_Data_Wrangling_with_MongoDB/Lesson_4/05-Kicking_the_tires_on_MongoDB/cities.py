@@ -20,7 +20,7 @@ def get_db():
 """
 
 def add_city(db):
-    db.cities.insert({"name" : "Chicago"})
+    db.cities.insert({"name" : "Geneva"})
     
 def get_city(db):
     return db.cities.find_one()
