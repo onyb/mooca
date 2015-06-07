@@ -1,0 +1,35 @@
+ani@orchid:~/repos/mooca/MongoDB_University/M101P_MongoDB_for_Developers/Chapter_1_Introduction/Homework_1.1$ mongorestore
+2015-06-07T16:25:47.174+0530	using default 'dump' directory
+2015-06-07T16:25:47.180+0530	building a list of dbs and collections to restore from dump dir
+2015-06-07T16:25:47.183+0530	reading metadata file from dump/m101/hw1.metadata.json
+2015-06-07T16:25:47.183+0530	reading metadata file from dump/m101/funnynumbers.metadata.json
+2015-06-07T16:25:47.184+0530	restoring m101.funnynumbers from file dump/m101/funnynumbers.bson
+2015-06-07T16:25:47.185+0530	restoring m101.hw1 from file dump/m101/hw1.bson
+2015-06-07T16:25:47.221+0530	restoring indexes for collection m101.hw1 from metadata
+2015-06-07T16:25:47.306+0530	error: E11000 duplicate key error index: m101.funnynumbers.$_id_ dup key: { : ObjectId('50778ce69331a280cf4bcfe0') }
+2015-06-07T16:25:47.306+0530	finished restoring m101.hw1
+2015-06-07T16:25:47.306+0530	restoring indexes for collection m101.funnynumbers from metadata
+2015-06-07T16:25:47.306+0530	finished restoring m101.funnynumbers
+2015-06-07T16:25:47.306+0530	done
+ani@orchid:~/repos/mooca/MongoDB_University/M101P_MongoDB_for_Developers/Chapter_1_Introduction/Homework_1.1$ mongo
+MongoDB shell version: 3.0.3
+connecting to: test
+Server has startup warnings: 
+2015-06-07T16:25:04.705+0530 I CONTROL  [initandlisten] 
+2015-06-07T16:25:04.705+0530 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2015-06-07T16:25:04.705+0530 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2015-06-07T16:25:04.705+0530 I CONTROL  [initandlisten] 
+2015-06-07T16:25:04.705+0530 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2015-06-07T16:25:04.705+0530 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2015-06-07T16:25:04.705+0530 I CONTROL  [initandlisten] 
+> use m101
+switched to db m101
+> hw1.findOne()
+> db.hw1.findOne();
+{
+	"_id" : ObjectId("50773061bf44c220307d8514"),
+	"answer" : 42,
+	"question" : "The Ultimate Question of Life, The Universe and Everything"
+}
+> ^C
+bye
