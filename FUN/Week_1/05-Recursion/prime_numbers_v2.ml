@@ -1,4 +1,7 @@
-
+(*
+ * is_prime a takes a non-negative integer n and checks whether it is a
+ * prime number.
+ *)
 
 let is_prime_v2 n =
   let multiple_of n d =
@@ -25,4 +28,3 @@ let is_prime_v2 n =
   else
     true
 ;;
-
