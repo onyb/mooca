@@ -3,7 +3,7 @@
  * prime number.
  *)
 
-let is_prime_v2 n =
+let is_prime n =
   let multiple_of n d =
     if n mod d = 0
     then
