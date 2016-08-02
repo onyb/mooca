@@ -1,0 +1,7 @@
+{
+  "_id": "ocaml",
+  "name": "Introduction to Functional Programming in OCaml",
+  "instructors": ["Roberto Di Cosmo", "Yann Regis-Gianas", "Ralf Treinen"],
+  "languages": ["OCaml"],
+  "uri": "https://www.fun-mooc.fr/courses/parisdiderot/56002/session01/courseware"
+}
