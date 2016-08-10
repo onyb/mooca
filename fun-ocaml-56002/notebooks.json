@@ -1,0 +1,23 @@
+{
+  "_id": "fun-ocaml-56002",
+  "name": "Introduction to Functional Programming in OCaml",
+  "type": "MOOC",
+  "instructors": ["Roberto Di Cosmo", "Yann Regis-Gianas", "Ralf Treinen"],
+  "credits": ["Université Paris Diderot", "FUN"],
+  "stack": ["OCaml"],
+  "uri": "https://www.fun-mooc.fr/courses/parisdiderot/56002/session01/courseware",
+  "notebooks": [
+    {
+        "_id": "week_0",
+        "name": "Introduction and Overview"
+    },
+    {
+        "_id": "week_1",
+        "name": "Basic types, Definitions, and Functions"
+    }
+    {
+        "_id": "week_2",
+        "name": "WIP"
+    }
+  ]
+}
