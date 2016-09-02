@@ -21,5 +21,20 @@
             "name": "Basic Data Structures"
         }
       ]
+    },
+    {
+      "_id": "st101",
+      "name": "Introduction to Statistics",
+      "type": "MOOC",
+      "instructors": ["Sebastian Thrun", "Adam Sherwin"],
+      "credits": ["Udacity"],
+      "stack": ["Python"],
+      "uri": "https://www.udacity.com/wiki/st101",
+      "notebooks": [
+        {
+            "_id": "week_1",
+            "name": "Visualizing Relationships in Data"
+        }
+      ]
     }
 ]
